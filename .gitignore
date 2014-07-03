@@ -14,7 +14,8 @@
 *.bak
 *.DS_Store
 .#*
-
+*.iml
+/.idea
 phpunit.xml
 
 .vagrant
