@@ -12,7 +12,7 @@
 
 
 {% block collot_datetime_stylesheet %}
-{% spaceless %}
-    <link href="{{ asset('bundles/scdatetimepicker/css/datetimepicker.css') }}" rel="stylesheet" media="screen">
+{% spaceless  '@bootstrap-datetimepicker_css'  %}
+    <link  href="{{ asset_url }}"  rel="stylesheet" media="screen">
 {% endspaceless %}
 {% endblock collot_datetime_stylesheet %}
