@@ -1,14 +1,14 @@
 <?php
 
-namespace SC\DatetimepickerBundle;
+namespace DBS\DatetimepickerBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use SC\DatetimepickerBundle\DependencyInjection\Compiler\FormPass;
+use DBS\DatetimepickerBundle\DependencyInjection\Compiler\FormPass;
 
-class SCDatetimepickerBundle extends Bundle
+class DatetimepickerBundle extends Bundle
 {
-    
+
     /**
      * {@inheritdoc}
      */

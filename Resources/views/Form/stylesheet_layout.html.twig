@@ -1,9 +1,9 @@
 {% block form_stylesheet %}
-{% spaceless %}
-    {% for child in form %}
-        {{ form_stylesheet(child) }}
-    {% endfor %}
-{% endspaceless %}
+    {% spaceless %}
+        {% for child in form %}
+            {{ form_stylesheet(child) }}
+        {% endfor %}
+    {% endspaceless %}
 {% endblock form_stylesheet %}
 
 {% block field_stylesheet "" %}
@@ -11,8 +11,10 @@
 {% block button_stylesheet "" %}
 
 
-{% block collot_datetime_stylesheet %}
-{% spaceless  '@bootstrap-datetimepicker_css'  %}
-    <link  href="{{ asset_url }}"  rel="stylesheet" media="screen">
-{% endspaceless %}
-{% endblock collot_datetime_stylesheet %}
+{% block dbs_datetime_stylesheet %}
+    {% spaceless %}
+        {% stylesheets '@bootstrap_datetimepicker_css' %}
+        <link href="{{ asset_url }}" rel="stylesheet" media="screen">
+        {% endstylesheets %}
+    {% endspaceless %}
+{% endblock dbs_datetime_stylesheet %}

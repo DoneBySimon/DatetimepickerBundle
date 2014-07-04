@@ -10,18 +10,19 @@
 
 {% block button_javascript "" %}
 
-{% block collot_datetime_javascript %}
+{% block dbs_datetime_javascript %}
     {% spaceless %}
 
-        {% javascripts '@bootstrap-datetimepicker_js' %}
+        {% javascripts '@bootstrap_datetimepicker_js' %}
         <script type="text/javascript" src="{{ asset_url }}" charset="UTF-8"></script>
         {% endjavascripts %}
 
         <script type="text/javascript">
+            //ok;
             jQuery(document).ready(function ($) {
                 $field = $('#{% if widget != "single_text" %}datepicker_{% endif %}{{ id }}');
 
-                {% block collot_datetime_javascript_prototype %}
+                {% block dbs_datetime_javascript_prototype %}
 
                 {% if widget != "single_text" %}
                 var $year = $('#{{ form.year.vars.id }}');

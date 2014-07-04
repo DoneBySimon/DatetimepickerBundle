@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace SC\DatetimepickerBundle\Twig\Extension;
+namespace DBS\DatetimepickerBundle\Twig\Extension;
 
 use Symfony\Component\Form\FormView;
 use Symfony\Bridge\Twig\Form\TwigRendererInterface;
@@ -65,7 +65,7 @@ class FormExtension extends \Twig_Extension
      */
     public function getName()
     {
-        return 'collot.twig.extension.form';
+        return 'dbs.twig.extension.form';
     }
 }
 

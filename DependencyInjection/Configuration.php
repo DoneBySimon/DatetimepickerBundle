@@ -1,6 +1,6 @@
 <?php
 
-namespace SC\DatetimepickerBundle\DependencyInjection;
+namespace DBS\DatetimepickerBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -17,14 +17,14 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('stephane_collot_datetimepicker');
-        
+        $rootNode = $treeBuilder->root('dbs_datetimepicker');
+
         $this->addPicker($rootNode);
 
         return $treeBuilder;
     }
-    
-    
+
+
     /**
      * Add configuration Picker
      *
@@ -34,16 +34,16 @@ class Configuration implements ConfigurationInterface
     {
         $rootNode
             ->children()
-                ->arrayNode('picker')
-                    ->canBeUnset()
-                    ->addDefaultsIfNotSet()
-                    ->treatNullLike(array('enabled' => true))
-                    ->treatTrueLike(array('enabled' => true))
-                    ->children()
-                        ->booleanNode('enabled')->defaultTrue()->end()
-                        ->variableNode('configs')->defaultValue(array())->end()
-                    ->end()
-                ->end()
+            ->arrayNode('picker')
+            ->canBeUnset()
+            ->addDefaultsIfNotSet()
+            ->treatNullLike(array('enabled' => true))
+            ->treatTrueLike(array('enabled' => true))
+            ->children()
+            ->booleanNode('enabled')->defaultTrue()->end()
+            ->variableNode('configs')->defaultValue(array())->end()
+            ->end()
+            ->end()
             ->end()
         ;
     }

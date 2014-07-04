@@ -1,6 +1,6 @@
 <?php
 
-namespace SC\DatetimepickerBundle\DependencyInjection;
+namespace DBS\DatetimepickerBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\Loader;
 /**
  * This is the class that loads and manages bundle configuration
  */
-class SCDatetimepickerExtension extends Extension
+class DatetimepickerExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -20,17 +20,17 @@ class SCDatetimepickerExtension extends Extension
         $configs = $this->processConfiguration(new Configuration(), $configs);
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-		$loader->load('twig.xml');
-        $loader->load('datetime.xml');        
-        
+        $loader->load('twig.xml');
+        $loader->load('datetime.xml');
+
         if (isset($configs["picker"]) && !empty($configs["picker"]['enabled'])) {
             $method = 'register' . ucfirst("picker") . 'Configuration';
 
             $this->$method($configs["picker"], $container);
         }
-        
+
     }
-    
+
     /**
      * Loads Picker configuration
      *
@@ -39,6 +39,6 @@ class SCDatetimepickerExtension extends Extension
      */
     private function registerPickerConfiguration(array $configs, ContainerBuilder $container)
     {
-        $container->setParameter('sc_datetimepicker.form.options', $configs['configs']);
+        $container->setParameter('datetimepicker.form.options', $configs['configs']);
     }
 }
